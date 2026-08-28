@@ -9,6 +9,16 @@ Cách chạy:
     python weather_function_calling.py
 """
 
+import sys
+from dotenv import load_dotenv
+
+# Ensure UTF-8 output on Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+load_dotenv()
+load_dotenv("../.env")
+
 from google import genai
 from google.genai import types
 
